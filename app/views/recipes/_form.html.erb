@@ -1,0 +1,6 @@
+<%= simple_form_for @recipe do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %><br>
+  <%= f.input :avatar , as: :file %><br>
+  <%= f.button :submit %>
+<% end %>

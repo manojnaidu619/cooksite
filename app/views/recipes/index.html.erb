@@ -1,0 +1,30 @@
+
+ <h2><%= link_to "Create new Recipe", new_recipe_path %></h2>
+<div class="ui four wide relaxed grid container">
+  <div class="row" >
+  <% @recipes.each do |recipe| %>
+  <div class="ui link cards">
+    <div class="card">
+      <div class="image">
+        <a href="<%= edit_recipe_path(recipe)%>"> <%= image_tag recipe.avatar.url(:medium) %> </a>
+      </div>
+      <div class="content">
+        <div class="header"><%= recipe.name %></div>
+        <div class="description">
+        <%= recipe.description %>.
+        </div>
+      </div>
+      <div class="extra content">
+        <span class="right floated ">
+          <%= link_to 'Delete', recipe_path(recipe), method: :delete, data: {confirm: "Are you sure?"} %>
+        </span>
+        <span>
+          <i class="pencil alternate icon"></i>
+          <%= link_to "Edit", edit_recipe_path(recipe) %>
+        </span>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+</div>
