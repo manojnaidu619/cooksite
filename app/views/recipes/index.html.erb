@@ -1,13 +1,11 @@
 
- <h2><%= link_to "Create new Recipe", new_recipe_path %></h2>
+ <center><h2><%= link_to "Create new Recipe", new_recipe_path %></h2></center>
 <div class="ui four wide relaxed grid container">
   <div class="row" >
   <% @recipes.each do |recipe| %>
   <div class="ui link cards">
     <div class="card">
-      <div class="image">
-        <a href="<%= edit_recipe_path(recipe)%>"> <%= image_tag recipe.avatar.url(:medium) %> </a>
-      </div>
+      <%= link_to image_tag(recipe.avatar.url(:medium)), recipe_path(recipe) %>
       <div class="content">
         <div class="header"><%= recipe.name %></div>
         <div class="description">
