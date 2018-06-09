@@ -1,0 +1,13 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <%= link_to 'Cooksite', root_path , class:"navbar-brand" %>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><%= link_to 'New Recipe', new_recipe_path  %></li>
+      <li><%= link_to 'SignUp', new_user_registration_path if !user_signed_in? %></li>
+      <li><%= link_to 'SignIn', new_user_session_path if !user_signed_in? %></li>
+      <li><%= link_to 'Logout',  destroy_user_session_path, method: :delete if user_signed_in? %></li>
+    </ul>
+  </div>
+</nav>

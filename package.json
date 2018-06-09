@@ -1,5 +1,7 @@
 {
   "name": "cooksite",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "semantic-ui": "^2.3.1"
+  }
 }
